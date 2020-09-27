@@ -1,0 +1,119 @@
+@import '_null';
+
+@import '_vars';
+
+@import '_fonts';
+
+@import '_table';
+
+@import '_chart';
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+body {
+    font-family: 'PT Sans Caption', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    background: $body-bg;
+}
+
+.header {
+    width: 100%;
+    padding: .875rem 1.25rem;
+
+    background-color: $contrast-color;
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.333;
+
+        color: $contrast-font-color;
+    }
+}
+
+.wrapper {
+    max-width: 80.83333vw;
+    margin: 0 auto;
+}
+
+.data {
+    margin: 10vh 0;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        height: 580px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .data {
+        margin: 5vh 0;
+
+        &__content {
+            flex-direction: column;
+
+            height: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .data {
+        margin: 2vh 0;
+    }
+}
+
+.material-design-icon.custom {
+    width: 20px;
+    height: 20px;
+}
+
+.material-design-icon.custom > .material-design-icon__svg {
+    width: 20px;
+    height: 20px;
+
+    cursor: pointer;
+    vertical-align: bottom;
+
+    fill: rgba(236,23,79, .5);
+}
+
+.material-design-icon.custom.active > .material-design-icon__svg {
+    fill: rgba(236,23,79, 1);
+}
+
+.material-design-icon.custom.down > .material-design-icon__svg {
+    transform: rotate(180deg);
+}
+
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+    transition: all .3s cubic-bezier(1.0, .5, .8, 1.0);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+    transform: translateY(10px);
+
+    opacity: 0;
+}
+
+.flip-list-move {
+    transition: transform 1s;
+}

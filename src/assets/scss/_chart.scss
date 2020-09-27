@@ -1,0 +1,133 @@
+.chart-section {
+    display: flex;
+    flex-basis: 69.5%;
+    flex-direction: column;
+
+    height: 100%;
+
+    background-color: $main-bg;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .35);
+
+    &__header {
+        font-size: 2.25rem;
+        font-weight: bold;
+        line-height: 1.31;
+
+        margin: 20px 20px auto 40px;
+    }
+
+    &__body {
+        position: relative;
+
+        width: 53.333vw;
+        height: 300px;
+    }
+
+    &__loading {
+        text-align: center;
+
+        img {
+            width: 50px;
+
+            animation: rotate 2s linear 0s infinite normal;
+        }
+    }
+
+    &__zoom {
+        margin: 34px 20px 36px 40px;
+        padding: 14px 0;
+
+        text-align: center;
+
+        background: #c4c4c4;
+
+        p {
+            font-size: .85rem;
+            font-weight: 700;
+            line-height: 1;
+
+            letter-spacing: 2px;
+
+            color: transparent;
+            text-shadow: 0 0 0 rgba(0,0,0,.25), 2px 2px 1px rgba(255,255,255,.5);
+        }
+    }
+
+    &__total {
+        flex: 0 0 60px;
+
+        padding: 0 1.25rem;
+
+        background-color: $contrast-color;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .chart-section {
+        &__body {
+            width: 100%;
+        }
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.total-data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__block {
+        font-size: 1.125rem;
+        line-height: 1.28;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        color: $contrast-font-color;
+
+        &:last-child {
+            text-align: right;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .chart-section {
+        &__header {
+            margin: 20px;
+        }
+
+        &__body,
+        &__zoom {
+            display: none;
+        }
+    }
+
+    .total-data {
+        flex-direction: column;
+
+        margin: -10px 0;
+        padding: 10px 0;
+
+        &__block {
+            display: inline-block;
+
+            margin: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .chart-section {
+        &__header {
+            font-size: 20px;
+            line-height: 1;
+        }
+    }
+}
